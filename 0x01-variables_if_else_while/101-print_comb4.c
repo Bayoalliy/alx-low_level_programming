@@ -9,15 +9,26 @@
  */
 int main(void)
 {
-	int ch;
+	int ch, i, j;
 
-	for (ch = '0'; ch <= '9'; ch++)
+	for (ch = 0; ch <= 9; ch++)
 	{
-		putchar(ch);
-		if (ch != '9')
+		for (i = 1; i <= 9; i++)
 		{
-			putchar(',');
-			putchar(' ');
+			for (j = 2; j <= 9; j++)
+			{
+				if (j > i && i > ch)
+				{
+					putchar(ch + '0');
+					putchar(i + '0');
+					putchar(j + '0');
+					if (ch != 7)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+			}
 		}
 	}
 
