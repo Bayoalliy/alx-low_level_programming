@@ -9,15 +9,25 @@
  */
 int main(void)
 {
-	int ch;
+	int k, l;
 
-	for (ch = '0'; ch <= '9'; ch++)
+	for (k = 0; k <= 99; k++)
 	{
-		putchar(ch);
-		if (ch != '9')
+		for (l = 1; l <= 99; l++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (l > k)
+			{
+				putchar((k / 10) + '0');
+				putchar((k % 10) + '0');
+				putchar(' ');
+				putchar((l / 10) + '0');
+				putchar((l % 10) + '0');
+				if (k != 98)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
 	}
 
