@@ -14,6 +14,14 @@ int print_last_digit(int i)
 {
 	int lastdigit = ((abs(i)) % 10);
 
-	_putchar(lastdigit + 48);
-	return (lastdigit);
+	if (lastdigit < 0)
+	{
+		_putchar(-lastdigit + 48);
+		return (-lastdigit);
+	}
+	else
+	{
+		_putchar(lastdigit + 48);
+		return (lastdigit);
+	}
 }
