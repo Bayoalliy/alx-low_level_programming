@@ -2,11 +2,9 @@
 #include "main.h"
 
 /**
- *
- * main - checks the code
+ * print_alphabet_x10 - prints a-z ten times
  *
  * Return: On success 1.
- *
  */
 
 void print_alphabet_x10(void)
@@ -14,7 +12,7 @@ void print_alphabet_x10(void)
 	int count = 0;
 
 	char ch;
-	
+
 	while (count < 10)
 	{
 		for (ch = 'a'; ch <= 'z'; ch++)
