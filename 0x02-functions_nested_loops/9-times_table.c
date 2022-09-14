@@ -20,17 +20,30 @@ void times_table(void)
 
 			if (mult < 10)
 			{
-				_putchar(mult + '0');
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+				if (num != 9)
+				{
+					_putchar(mult + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
+				else
+					_putchar(mult + '0');
 			}
-			else
+			if (mult > 9)
 			{
-				_putchar((mult / 10) + '0');
-				_putchar((mult % 10) + '0');
-				_putchar(',');
-				_putchar(' ');
+				if (num != 9)
+				{
+					_putchar((mult / 10) + '0');
+					_putchar((mult % 10) + '0');
+					_putchar(',');
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar((mult / 10) + '0');
+					_putchar((mult % 10) + '0');
+				}
 			}
 		}
 		_putchar('\n');
