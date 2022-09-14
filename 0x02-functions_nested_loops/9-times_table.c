@@ -18,32 +18,24 @@ void times_table(void)
 		{
 			int mult = table * num;
 
-			if (mult < 10)
+			if (mult < 10 && num != 0)
 			{
-				if (num != 9)
-				{
-					_putchar(mult + '0');
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else
-					_putchar(mult + '0');
+				_putchar(',');
+				_putchar(32);
+				_putchar(32);
+				_putchar(mult + '0');
 			}
-			if (mult > 9)
+			else if(num == 0)
 			{
-				if (num != 9)
-				{
-					_putchar((mult / 10) + '0');
-					_putchar((mult % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar((mult / 10) + '0');
-					_putchar((mult % 10) + '0');
-				}
+				_putchar('0');
+			}
+
+			else if(mult >= 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((mult / 10) + '0');
+				_putchar((mult % 10) + '0');
 			}
 		}
 		_putchar('\n');
