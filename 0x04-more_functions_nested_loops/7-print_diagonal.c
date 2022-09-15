@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include "main.h"
 #include <ctype.h>
-#include <stdio.h>
 
 /**
  * print_diagonal - prints '\' diagonally
@@ -27,6 +26,5 @@ void print_diagonal(int n)
 			if (i < (n - 1))
 				_putchar('\n');
 		}
-	printf("loop ended");
 	_putchar('\n');
 }
