@@ -3,8 +3,9 @@
 #include <ctype.h>
 
 /**
+ * _isupper - checks if a letter is in uppercase
  *
- * main - checks the code
+ * @c : parameter
  *
  * Return: On success 1.
  *
@@ -13,7 +14,7 @@
 int _isupper(int c)
 {
 	if (isupper(c) != 0)
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }
