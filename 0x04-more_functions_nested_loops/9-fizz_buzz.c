@@ -15,18 +15,19 @@ void fizzbuzz(void)
 {
 	int i;
 
-	for (i = 0; i < 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0)
-			printf("Fizz");
+		if ((i % 3 == 0) && (i % 5 == 0))
+			printf("FizzBuzz ");
 
 		else if (i % 5 == 0)
-			printf("Buzz");
-		else if ((i % 3 == 0) && (i % 5 == 0))
-			printf("FizzBuzz");
+			printf("Buzz ");
+		else if (i % 3 == 0)
+			printf("Fizz ");
 		else
-			printf("%d", i);
+			printf("%d ", i);
 	}
+	printf("\n");
 }
 
 /**
@@ -35,7 +36,7 @@ void fizzbuzz(void)
  * Return: Always 0.
  */
 
-int main(void))
+int main(void)
 {
 	fizzbuzz();
 	return (0);
