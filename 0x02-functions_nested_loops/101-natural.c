@@ -1,12 +1,8 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - Entry point
- *
- * Return: Always 0 (success)
- *
- * print_sum - print the sum of multiples of 3 or 5 below 1024
+ * Return : Always 0 (success)
  */
 void print_sum(void);
 
@@ -17,6 +13,9 @@ int main(void)
 	return (0);
 }
 
+/**
+ * print_sum - print the sum of multiples of 3 or 5 below 1024
+ */
 void print_sum(void)
 {
 	int i, sum = 0;
