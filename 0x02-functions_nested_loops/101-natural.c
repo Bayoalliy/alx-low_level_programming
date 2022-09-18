@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (success)
+ *
+ * print_sum - print the sum of multiples of 3 or 5 below 1024
+ */
+void print_sum(void);
+
+int main(void)
+{
+	print_sum();
+
+	return (0);
+}
+
+void print_sum(void)
+{
+	int i, sum = 0;
+
+	for (i = 0; i < 1024; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+		{
+			sum += i;
+		}
+	}
+	printf("%d\n", sum);
+}
