@@ -11,22 +11,25 @@
 
 void print_number(int n)
 {
-	int i;
+	unsigned int i;
 
-	int j = n;
+	unsigned int j = n;
 
-	int k = n;
+	unsigned int k = n;
+
+		if (n < 0)
+		{
+			j = abs(n);
+			n = abs(n);
+			k = abs(n);
+			_putchar('-');
+		}
+
 
 	if (n < 10 && n >= 0)
 		_putchar(n + '0');
 	else
 	{
-		if (n < 0)
-		{
-			j = abs(n);
-			k = abs(n);
-			_putchar('-');
-		}
 		do {
 			k = k / 10;
 
