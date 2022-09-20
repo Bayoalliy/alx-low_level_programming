@@ -1,11 +1,9 @@
-
-
 /**
- * main - check the code 
+ * reset_to_98 - change the value of a variable
  *
- * Return: Always 0.
+ * @n : pointer to the variable we want to change
  */
 void reset_to_98(int *n)
 {
-    *n = 98;
+	*n = 98;
 }
