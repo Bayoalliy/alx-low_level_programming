@@ -39,12 +39,16 @@ void print_number(int n)
 
 		for (i = 10; i <= j; i *= 10)
 		{
-			while ((j / 10) > (i - 1))
+			if (i % 10 == 0)
 			{
-				j = j / 10;
+				while ((j / 10) > (i - 1))
+				{
+					j = j / 10;
+				}
+				_putchar((j % 10) + '0');
+				j = n;
+		
 			}
-			_putchar((j % 10) + '0');
-			j = n;
 		}
 	}
 }
