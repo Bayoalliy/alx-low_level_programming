@@ -47,7 +47,6 @@ void print_number(int n)
 				}
 				_putchar((j % 10) + '0');
 				j = n;
-		
 			}
 		}
 	}
