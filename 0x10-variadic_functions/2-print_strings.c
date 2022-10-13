@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
- * print_numbers - print it's arguments(integers).
+ * print_strings - print it's arguments(strings).
  * @n: number of argument.
- * @separator: separates the printed numbers.
+ * @separator: separates the printed strings.
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
