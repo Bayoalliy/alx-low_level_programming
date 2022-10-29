@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * set_bit - set bit in an index to 1.
+ * clear_bit - set bit in an index to 0.
  * @n: decimal to be converted to binary.
  * @index: index in a binary.
  * Return: 1 (if success).
  */
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int i = 1;
 
@@ -15,11 +15,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	if (ind < 32)
 	{
-		for (; ind >= 0; i <<= 1, ind--)
+		for (; i <= *n; i <<= 1, ind--)
 		{
 			if (ind == 0)
 			{
-				*n = *n | i;
+				*n = *n ^ i;
 				return (1);
 			}
 		}
