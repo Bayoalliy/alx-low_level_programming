@@ -14,7 +14,7 @@ int main(void)
     printf("%d\n", n);
     n = get_bit(98, 1);
     printf("%d\n", n);
-    n = get_bit(2048, 20);
+    n = get_bit(4294967296, 43);
     printf("%d\n", n);
     return (0);
 }
