@@ -26,7 +26,7 @@ int get_bit(unsigned long int n, unsigned int index)
 				return (0);
 		}
 	}
-	if (ind > 35)
+	if (ind > 31)
 		return (-1);
 	else
 		return (0);
