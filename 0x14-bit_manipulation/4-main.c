@@ -16,7 +16,7 @@ int main(void)
     n = 0;
     clear_bit(&n, 10);
     printf("%lu\n", n);
-    n = 2048;
+    n = 2049;
     clear_bit(&n, 0);
     printf("%lu\n", n);
     return (0);

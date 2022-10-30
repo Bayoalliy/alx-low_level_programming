@@ -19,12 +19,11 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		{
 			if (ind == 0)
 			{
-				if (*n ^ i)
+				if (*n & i)
 				{
-					*n = *n | 0;
+					*n = *n ^ i;
 					return (1);
 				}
-				*n = *n ^ i;
 				return (1);
 			}
 		}
