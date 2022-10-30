@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <limits.h>
 /**
  * main - check the code
  *
@@ -16,7 +16,7 @@ int main(void)
     printf("%u\n", n);
     n = flip_bits(1024, 3);
     printf("%u\n", n);
-    n = flip_bits(1024, 1025);
+    n = flip_bits(ULONG_MAX, 0);
     printf("%u\n", n);
     return (0);
 }

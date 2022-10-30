@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <limits.h>
 /**
  * main - check the code
  *
@@ -16,7 +16,7 @@ int main(void)
     n = 0;
     clear_bit(&n, 10);
     printf("%lu\n", n);
-    n = 2049;
+    n = ULONG_MAX - 1;
     clear_bit(&n, 0);
     printf("%lu\n", n);
     return (0);

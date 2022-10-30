@@ -7,14 +7,14 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int i = 1;
+	unsigned long int bits_flips = 0;
 
-	int sum = 0;
-
-	for (; i <= n; i <<= 1)
+	while (n || m)
 	{
-		if (((n & i) && !(m & i)) || (!(n & i) && (m & i)))
-			sum += 1;
+		if ((n & 1) != (m & 1))
+			bits_flips += 1;
+		n >>= 1;
+		m >>= 1;
 	}
-	return (sum);
+	return (bits_flips);
 }
