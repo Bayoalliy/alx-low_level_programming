@@ -15,7 +15,7 @@ void copy(char *file_from, char *file_to)
 	char *buf = malloc(1024);
 
 	fd1 = open(file_from, O_RDWR);
-	fd2 = open(file_to, O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 	r = read(fd1, buf, 1024);
 
