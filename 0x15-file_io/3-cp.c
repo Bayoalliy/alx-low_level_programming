@@ -38,7 +38,7 @@ void copy(char *file_from, char *file_to)
 	fd1 = open(file_from, O_RDWR);
 	if (fd1 < 0)
 		error_check(fd1, file_from);
-	fd2 = open(file_to, O_RDWR | O_TRUNC, 0664);
+	fd2 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 	if (fd2 < 0)
 		error_check(fd2, file_to);
