@@ -11,12 +11,12 @@ void error_check(int fd, char *file_name)
 {
 	if (fd == 3)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_name);
+		dprintf(2, "Error: Can't read from file %s\n", file_name);
 		exit(98);
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_name);
+		dprintf(2, "Error: Can't write to %s\n", file_name);
 		exit(99);
 	}
 }
@@ -35,7 +35,7 @@ void copy(char *file_from, char *file_to)
 
 	char buf[1024];
 
-	fd1 = open(file_from, O_RDWR);
+	fd1 = open(file_from, O_WRONLY);
 	if (fd1 < 0)
 		error_check(fd1, file_from);
 	fd2 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
