@@ -2,35 +2,56 @@
 
 
 /**
+ * error_check - check for possible error.
+ * @fd: file descriptor.
+ * @file_name: name of affected file.
+ */
+
+void error_check(int fd, char *file_name)
+{
+	if (fd == 3)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_name);
+		exit(98);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_name);
+		exit(99);
+	}
+}
+
+
+
+/**
  * copy - copy content of a file to another.
  * @file_from: file 1.
  * @file_to: file 2.
  * Return: void.
  */
-
 void copy(char *file_from, char *file_to)
 {
 	int fd1, fd2, r, w;
 
-	char *buf = malloc(1024);
+	char buf[1024];
 
 	fd1 = open(file_from, O_RDWR);
-	fd2 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	if (fd1 < 0)
+		error_check(fd1, file_from);
+	fd2 = open(file_to, O_RDWR | O_TRUNC, 0664);
 
-	r = read(fd1, buf, 1024);
+	if (fd2 < 0)
+		error_check(fd2, file_to);
 
-	if (fd1 < 0 || r < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+	do {
+		r = read(fd1, buf, 1024);
+		if (r < 0)
+			error_check(fd1, file_from);
+		w = write(fd2, buf, r);
+		if (w < 0)
+			error_check(fd2, file_to);
+	} while (r == 1024);
 
-	w = write(fd2, buf, 1024);
-	if (fd2 < 0 || w < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
 	if (close(fd1) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd1);
