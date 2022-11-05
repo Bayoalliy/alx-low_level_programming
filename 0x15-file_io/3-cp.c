@@ -9,7 +9,7 @@
 
 void error_check(int fd, char *file_name)
 {
-	if (fd == 3)
+	if (fd == STDERR_FILENO + 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_name);
 		exit(98);
