@@ -14,7 +14,7 @@ void error_check(int fd, char *file_name)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_name);
 		exit(98);
 	}
-	if (fd == 4)
+	else
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_name);
 		exit(99);
