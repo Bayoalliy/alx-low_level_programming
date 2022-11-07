@@ -10,7 +10,7 @@
 
 void error_check(int fd1, int fd2, char *file_name)
 {
-	if (fd1 < fd2)
+	if (fd1 == -1 && fd2 == 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_name);
 		exit(98);
@@ -47,10 +47,10 @@ void copy(char *file_from, char *file_to)
 	do {
 		r = read(fd1, buf, 1024);
 		if (r < 0)
-			error_check(fd1, 0, file_from);
+			error_check(-1, 0, file_from);
 		w = write(fd2, buf, r);
 		if (w < 0)
-			error_check(0, fd2, file_to);
+			error_check(0, -1, file_to);
 	} while (r == 1024);
 
 	if (close(fd1) < 0)
