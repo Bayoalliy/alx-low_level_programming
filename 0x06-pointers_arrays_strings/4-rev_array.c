@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * _strcmp - compare one string with another
- * @s1 : pointer to the first string
- * @s2 : pointer to the second string
+ * reverse_array - reverse an array of integers.
+ * @a : pointer to the array.
+ * @n : suze of the array.
  * Return: integer
  */
 void reverse_array(int *a, int n)
 {
-	int i, j = 0, *b = a;
+	int i = 0, *z = a + (n - 1), tmp;
 
-	for (i = n; i >= 0; i--)
+	while (i < n / 2)
 	{
-		b[j] = a[i];
-		j++;
+		tmp = *a;
+		*a = *z;
+		*z = tmp;
+		a++;
+		z--;
+		i++;
 	}
 }
