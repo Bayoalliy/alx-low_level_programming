@@ -24,9 +24,9 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
-        n = "1234567890";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
+        n = "10";
+        m = "89";
+        res = infinite_add(n, m, r2, 8);
         if (res == 0)
         {
                 printf("Error\n");
