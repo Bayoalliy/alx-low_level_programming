@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 
 
@@ -9,6 +10,8 @@
  * @argc: arguments count.
  *
  * @argv: aregument vector.
+ *
+ * Return: 0 if success.
  *
  */
 int main(int argc, char **argv)
@@ -21,8 +24,8 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (*argv[2] != '/' && *argv[2] != '*' &&
-	*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '%')
+	if ((*argv[2] != '/' && *argv[2] != '*' && *argv[2] != '+'
+	&& *argv[2] != '-' && *argv[2] != '%') || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
 		exit(99);
@@ -39,5 +42,5 @@ int main(int argc, char **argv)
 
 	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
 
-			return (0);
+	return (0);
 }
