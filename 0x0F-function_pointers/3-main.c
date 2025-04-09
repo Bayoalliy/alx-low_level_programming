@@ -3,7 +3,14 @@
 #include "3-calc.h"
 
 
-
+/**
+ * main - Entry point.
+ *
+ * @argc: arguments count.
+ *
+ * @argv: aregument vector.
+ *
+ */
 int main(int argc, char **argv)
 {
 	int (*func)(int, int);
@@ -14,22 +21,23 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (*argv[2] != '/' || *argv[2] != '*' || *argv[2] != '+' || *argv[2] != '-' || *argv[2] != '%')
+	if (*argv[2] != '/' && *argv[2] != '*' &&
+	*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '%')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((argv[2][0] == '/' && argv[3][0] == '0') || (argv[2][0] == '%' && argv[3][0] == '0'))
+	if ((argv[2][0] == '/' && argv[3][0] == '0') ||
+	(argv[2][0] == '%' && argv[3][0] == '0'))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	
+
 	func = get_op_func(argv[2]);
 
 	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
 
 			return (0);
-			
 }
